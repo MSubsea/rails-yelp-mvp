@@ -1,7 +1,17 @@
 <h1><%= @restaurant.name%></h1>
+<h2>Description</h2>
 <%= @restaurant.address%><br>
 <%= @restaurant.category%>
 <br>
+<h2>Reviews</h2>
+<% if @restaurant.reviews.length.zero? %>
+       <p>No reviews available.</p>
+<% else %>
+<%     @restaurant.reviews.each do |review| %>
+           <%= review.content %><br>
+           Rating: <strong><%= review.rating %></strong><br><br>
+        <% end %>
+<% end %>
 <%= link_to "Edit restaurant", edit_restaurant_path(@restaurant)%><br>
 <%= link_to "Delete restaurant",
             restaurant_path(@restaurant),
