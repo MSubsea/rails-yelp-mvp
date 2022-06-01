@@ -12,6 +12,7 @@
            Rating: <strong><%= review.rating %></strong><br><br>
         <% end %>
 <% end %>
+<%= link_to "Add review", new_restaurant_review_path(@restaurant)%><br>
 <%= link_to "Edit restaurant", edit_restaurant_path(@restaurant)%><br>
 <%= link_to "Delete restaurant",
             restaurant_path(@restaurant),
